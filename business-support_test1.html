@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+    </style>
+    <!-- Add the widget script in the head section -->
+    <script src="https://snippets.freshchat.com/js/fc-pre-chat-form-v2.min.js"></script>
+    <script>
+        var preChatTemplate = {
+            //Form header color and Submit button color.
+            mainbgColor: '#0aa4db',
+            //Form Header Text and Submit button text color.
+            maintxColor: '#fff',
+            //Chat Form Title
+            heading: 'GadgetGod',
+            //Chat form Welcome Message
+            textBanner: 'We can\'t wait to talk to you. But first, please take a couple of moments to tell us a bit about yourself.',
+            //Submit Button Label.
+            SubmitLabel: 'Start Chat',
+            //Fields List - Maximum is 5
+            //All the values are mandatory and the script will not work if not available.
+            fields: {
+                field1: {
+                    //Type can be either text or title
+                    type: "title",
+                    //Label for Field Title, can be in any language
+                    label: "Title",
+                    //Field ID for Title
+                    fieldId: "title",
+                    //Required "yes" or "no"
+                    required: "yes",
+                    //Error text to be displayed
+                    error: "Please Enter a valid Title"
+                },
+                field2: {
+                    //Type for Name - Do not Change
+                    type: "name",
+                    //Label for Field Name, can be in any language
+                    label: "Name",
+                    //Default - Field ID for Name - Do Not Change
+                    fieldId: "name",
+                    //Required "yes" or "no"
+                    required: "yes",
+                    //Error text to be displayed
+                    error: "Please Enter a valid name"
+                },
+                field3: {
+                    //Type for Email - Do Not Change
+                    type: "email",
+                    //Label for Field Email, can be in any language
+                    label: "Email",
+                    //Default - Field ID for Email - Do Not Change
+                    fieldId: "email",
+                    //Required "yes" or "no"
+                    required: "yes",
+                    //Error text to be displayed
+                    error: "Please Enter a valid Email"
+                },
+                field4: {
+                    //Type for Phone - Do Not Change
+                    type: "phone",
+                    //Label for Field Phone, can be in any language
+                    label: "Phone",
+                    //Default - Field ID for Phone - Do Not Change
+                    fieldId: "phone",
+                    //Required "yes" or "no"
+                    required: "yes",
+                    //Error text to be displayed
+                    error: "Please Enter a valid Phone Number"
+                },
+                field5: {
+                    //Type for Dropdown
+                    type: "dropdown",
+                    //Label for Field Dropdown, can be in any language
+                    label: "Plan",
+                    //Field ID for Plan Dropdown
+                    fieldId: "plan",
+                    //Required "yes" or "no"
+                    required: "yes",
+                    //Error text to be displayed
+                    error: "Please select an option",
+                    //Options for the Dropdown field
+                    options: ['Sprout', 'Blossom', 'Garden', 'Estate', 'Forest']
+                }
+            }
+        };
+
+        window.fcSettings = {
+            token: "926596ba-50a1-47f5-a2cb-f1bf5b1b4a9f",  // Replace with your actual token
+            host: "https://kaplanopenlearning.myfreshworks.com",    // Replace with your actual host URL
+            config: {
+                cssNames: {
+                    widget: 'custom_fc_frame',
+                    expanded: 'custom_fc_expanded'
+                }
+            },
+            onInit: function () {
+                console.log('widget init');
+                fcPreChatform.fcWidgetInit(preChatTemplate);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Simple Website</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="business-support.html">Business Support</a>
+        <a href="study-skills.html">Study Skills</a>
+    </nav>
+    <section>
+        <h2>Welcome to the Home Page</h2>
+        <p>This is the home page content.</p>
+    </section>
+    <!-- Add the widget initialization script just before the closing body tag -->
+    <script>
+        (function () {
+            var script = document.createElement('script');
+            script.src = 'https://wchat.freshchat.com/js/widget.js';
+            script.async = true;
+            script.onload = function () {
+                var chat = new Freshchat.Widget();
+                chat.init(window.fcSettings);
+            };
+            document.head.appendChild(script);
+        })();
+    </script>
+</body>
+
+</html>
